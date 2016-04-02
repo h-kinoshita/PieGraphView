@@ -49,8 +49,8 @@ class PieGraphView: UIView {
     }
     
     // MARK: - Internal func
-    func changeParams(params:[Dictionary<String,AnyObject>]){
-        self.makePieGraphView.changeParams(_molecule, denominator: _denominator, graphColor: _graphColor)
+    func changeParams(molecule: Float, denominator: Float, graphColor: UIColor){
+        self.makePieGraphView.changeParams(molecule, denominator: denominator, graphColor: graphColor)
     }
     
     func startAnimating(){

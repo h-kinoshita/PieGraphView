@@ -11,7 +11,7 @@ import UIKit
 class _makePieGraphView: UIView {
     
     // MARK: - Grobal vars
-    var _end_angle:CGFloat!
+    var _end_angle: CGFloat!
     var _molecule: Float!
     var _denominator: Float!
     var _graphColor: UIColor!

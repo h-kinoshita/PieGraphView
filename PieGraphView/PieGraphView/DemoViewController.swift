@@ -15,10 +15,10 @@ class DemoViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let molecule: Float = 40.0;
-        let denominate: Float = 100.0;
-        let graphColor: UIColor = UIColor.blueColor()
+        let denominator: Float = 100.0;
+        let graphColor: UIColor = UIColor.yellowColor()
         let backGroundColor: UIColor = UIColor.darkGrayColor()
-        graphView = PieGraphView(frame: CGRectMake(0, 30, 320, 320), molecule: molecule, denominator:denominate ,graphColor: graphColor, backGroundColor: backGroundColor)
+        graphView = PieGraphView(frame: CGRectMake(0, 30, 320, 320), molecule: molecule, denominator:denominator ,graphColor: graphColor, backGroundColor: backGroundColor)
         self.view.addSubview(graphView)
     }
     
@@ -32,18 +32,10 @@ class DemoViewController: UIViewController {
     }
     
     @IBAction func change(sender: AnyObject) {
-        let randInt:Int = 1
-        let colorList:[UIColor] = [UIColor.redColor(),
-                                   UIColor.blueColor(),
-                                   UIColor.yellowColor(),
-                                   UIColor.greenColor(),
-                                   UIColor.grayColor()]
-        var params = [Dictionary<String,AnyObject>]()
-        for i in 0 ..< randInt {
-            let param:Int = 5;
-            params.append(["value":param,"color":colorList[i]])
-        }
-        graphView.changeParams(params)
+        let moleculeCange: Float = 85.0;
+        let denominatorChange: Float = 100.0;
+        let graphColorChange: UIColor = UIColor.yellowColor()
+        graphView.changeParams(moleculeCange, denominator: denominatorChange, graphColor: graphColorChange)
         graphView.startAnimating()
     }
     
