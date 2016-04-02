@@ -1,5 +1,5 @@
 //
-//  _backGroundView.swift
+//  _BackGroundView.swift
 //  PieGraphView
 //
 //  Created by h.kinoshita on 2016/04/02.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class _backGroundView: UIView {
+class _BackGroundView: UIView {
     
     // MARK: - Required
     required init(coder aDecoder: NSCoder) {

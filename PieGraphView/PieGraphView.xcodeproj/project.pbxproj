@@ -15,9 +15,10 @@
 		5358A5F11CAFBAF200D96845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5358A5EF1CAFBAF200D96845 /* LaunchScreen.storyboard */; };
 		5358A5FC1CAFBAF200D96845 /* PieGraphViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A5FB1CAFBAF200D96845 /* PieGraphViewTests.swift */; };
 		5358A6071CAFBAF200D96845 /* PieGraphViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6061CAFBAF200D96845 /* PieGraphViewUITests.swift */; };
-		5358A6151CAFBBA100D96845 /* _makePieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6141CAFBBA100D96845 /* _makePieGraphView.swift */; };
-		5358A6181CAFD0C900D96845 /* _backGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6171CAFD0C900D96845 /* _backGroundView.swift */; };
+		5358A6151CAFBBA100D96845 /* _MakePieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6141CAFBBA100D96845 /* _MakePieGraphView.swift */; };
+		5358A6181CAFD0C900D96845 /* _BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6171CAFD0C900D96845 /* _BackGroundView.swift */; };
 		5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A61A1CAFD1B400D96845 /* PieGraphView.swift */; };
+		53A1EDE41CAFFC810094AE29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +53,10 @@
 		5358A6021CAFBAF200D96845 /* PieGraphViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PieGraphViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5358A6061CAFBAF200D96845 /* PieGraphViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieGraphViewUITests.swift; sourceTree = "<group>"; };
 		5358A6081CAFBAF200D96845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5358A6141CAFBBA100D96845 /* _makePieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _makePieGraphView.swift; sourceTree = "<group>"; };
-		5358A6171CAFD0C900D96845 /* _backGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _backGroundView.swift; sourceTree = "<group>"; };
+		5358A6141CAFBBA100D96845 /* _MakePieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _MakePieGraphView.swift; sourceTree = "<group>"; };
+		5358A6171CAFD0C900D96845 /* _BackGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _BackGroundView.swift; sourceTree = "<group>"; };
 		5358A61A1CAFD1B400D96845 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
+		53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A1EDE41CAFFC810094AE29 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 		5358A5D71CAFBAF100D96845 = {
 			isa = PBXGroup;
 			children = (
+				53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */,
 				5358A5E21CAFBAF100D96845 /* PieGraphView */,
 				5358A5FA1CAFBAF200D96845 /* PieGraphViewTests */,
 				5358A6051CAFBAF200D96845 /* PieGraphViewUITests */,
@@ -147,8 +151,8 @@
 		5358A6191CAFD19000D96845 /* PrivateClass */ = {
 			isa = PBXGroup;
 			children = (
-				5358A6171CAFD0C900D96845 /* _backGroundView.swift */,
-				5358A6141CAFBBA100D96845 /* _makePieGraphView.swift */,
+				5358A6171CAFD0C900D96845 /* _BackGroundView.swift */,
+				5358A6141CAFBBA100D96845 /* _MakePieGraphView.swift */,
 			);
 			name = PrivateClass;
 			sourceTree = "<group>";
@@ -284,8 +288,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5358A6151CAFBBA100D96845 /* _makePieGraphView.swift in Sources */,
-				5358A6181CAFD0C900D96845 /* _backGroundView.swift in Sources */,
+				5358A6151CAFBBA100D96845 /* _MakePieGraphView.swift in Sources */,
+				5358A6181CAFD0C900D96845 /* _BackGroundView.swift in Sources */,
 				5358A5E61CAFBAF100D96845 /* DemoViewController.swift in Sources */,
 				5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */,
 				5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */,
@@ -516,6 +520,7 @@
 				5358A60D1CAFBAF200D96845 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5358A60E1CAFBAF200D96845 /* Build configuration list for PBXNativeTarget "PieGraphViewTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				5358A6101CAFBAF200D96845 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5358A6111CAFBAF200D96845 /* Build configuration list for PBXNativeTarget "PieGraphViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +538,7 @@
 				5358A6131CAFBAF200D96845 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

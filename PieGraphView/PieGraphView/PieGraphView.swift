@@ -18,8 +18,8 @@ class PieGraphView: UIView {
     var _backGroundColor: UIColor!
     
     /// Classes
-    var makePieGraphView: _makePieGraphView!
-    var backGroundView: _backGroundView!
+    var makePieGraphView: _MakePieGraphView!
+    var backGroundView: _BackGroundView!
     
     // MARK: - Required
     required init(coder aDecoder: NSCoder) {
@@ -41,8 +41,8 @@ class PieGraphView: UIView {
     // MARK: Private func
     func setSubView() {
         // addSubView customView of BackGround
-        backGroundView = _backGroundView.init(frame: frame, backGroundColor: _backGroundColor)
-        makePieGraphView = _makePieGraphView.init(frame: frame, molecule: _molecule, denominator: _denominator, graphColor: _graphColor)
+        backGroundView = _BackGroundView.init(frame: frame, backGroundColor: _backGroundColor)
+        makePieGraphView = _MakePieGraphView.init(frame: frame, molecule: _molecule, denominator: _denominator, graphColor: _graphColor)
         
         self.addSubview(backGroundView)
         self.addSubview(makePieGraphView)
