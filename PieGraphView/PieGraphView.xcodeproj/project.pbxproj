@@ -15,7 +15,9 @@
 		5358A5F11CAFBAF200D96845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5358A5EF1CAFBAF200D96845 /* LaunchScreen.storyboard */; };
 		5358A5FC1CAFBAF200D96845 /* PieGraphViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A5FB1CAFBAF200D96845 /* PieGraphViewTests.swift */; };
 		5358A6071CAFBAF200D96845 /* PieGraphViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6061CAFBAF200D96845 /* PieGraphViewUITests.swift */; };
-		5358A6151CAFBBA100D96845 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6141CAFBBA100D96845 /* PieGraphView.swift */; };
+		5358A6151CAFBBA100D96845 /* _makePieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6141CAFBBA100D96845 /* _makePieGraphView.swift */; };
+		5358A6181CAFD0C900D96845 /* _backGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6171CAFD0C900D96845 /* _backGroundView.swift */; };
+		5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A61A1CAFD1B400D96845 /* PieGraphView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +52,9 @@
 		5358A6021CAFBAF200D96845 /* PieGraphViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PieGraphViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5358A6061CAFBAF200D96845 /* PieGraphViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieGraphViewUITests.swift; sourceTree = "<group>"; };
 		5358A6081CAFBAF200D96845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5358A6141CAFBBA100D96845 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
+		5358A6141CAFBBA100D96845 /* _makePieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _makePieGraphView.swift; sourceTree = "<group>"; };
+		5358A6171CAFD0C900D96845 /* _backGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _backGroundView.swift; sourceTree = "<group>"; };
+		5358A61A1CAFD1B400D96845 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +107,7 @@
 			children = (
 				5358A5E31CAFBAF100D96845 /* AppDelegate.swift */,
 				5358A5E51CAFBAF100D96845 /* DemoViewController.swift */,
-				5358A6141CAFBBA100D96845 /* PieGraphView.swift */,
+				5358A6161CAFD08F00D96845 /* class */,
 				5358A5E71CAFBAF100D96845 /* Main.storyboard */,
 				5358A5ED1CAFBAF200D96845 /* Assets.xcassets */,
 				5358A5EF1CAFBAF200D96845 /* LaunchScreen.storyboard */,
@@ -129,6 +133,24 @@
 				5358A6081CAFBAF200D96845 /* Info.plist */,
 			);
 			path = PieGraphViewUITests;
+			sourceTree = "<group>";
+		};
+		5358A6161CAFD08F00D96845 /* class */ = {
+			isa = PBXGroup;
+			children = (
+				5358A6191CAFD19000D96845 /* PrivateClass */,
+				5358A61A1CAFD1B400D96845 /* PieGraphView.swift */,
+			);
+			name = class;
+			sourceTree = "<group>";
+		};
+		5358A6191CAFD19000D96845 /* PrivateClass */ = {
+			isa = PBXGroup;
+			children = (
+				5358A6171CAFD0C900D96845 /* _backGroundView.swift */,
+				5358A6141CAFBBA100D96845 /* _makePieGraphView.swift */,
+			);
+			name = PrivateClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5358A6151CAFBBA100D96845 /* PieGraphView.swift in Sources */,
+				5358A6151CAFBBA100D96845 /* _makePieGraphView.swift in Sources */,
+				5358A6181CAFD0C900D96845 /* _backGroundView.swift in Sources */,
 				5358A5E61CAFBAF100D96845 /* DemoViewController.swift in Sources */,
 				5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */,
+				5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */,
 				5358A5EC1CAFBAF100D96845 /* PieGraphView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,7 +20,8 @@ class DemoViewController: UIViewController {
                 params.append(["value":5,"color":UIColor.blueColor()])
                 params.append(["value":8,"color":UIColor.greenColor()])
                 params.append(["value":10,"color":UIColor.yellowColor()])
-        graphView = PieGraphView(frame: CGRectMake(0, 30, 320, 320), params: params)
+        let backGroundColor = UIColor.darkGrayColor()
+        graphView = PieGraphView(frame: CGRectMake(0, 30, 320, 320), params: params, backGroundColor: backGroundColor)
         self.view.addSubview(graphView)
     }
     
