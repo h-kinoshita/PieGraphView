@@ -11,8 +11,10 @@ import UIKit
 class _makePieGraphView: UIView {
     
     // MARK: - Grobal vars
-    var _params:[Dictionary<String,AnyObject>]!
     var _end_angle:CGFloat!
+    var _molecule: Float!
+    var _denominator: Float!
+    var _graphColor: UIColor!
     
     // MARK: - Required
     required init(coder aDecoder: NSCoder) {
@@ -20,11 +22,14 @@ class _makePieGraphView: UIView {
     }
     
     // MARK: - Initialize
-    init(frame: CGRect,params:[Dictionary<String, AnyObject>]) {
+    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor) {
         super.init(frame: frame)
-        _params = params;
         self.backgroundColor = UIColor.clearColor();
+        
         _end_angle = -CGFloat(M_PI / 2.0);
+        _molecule = molecule
+        _denominator = denominator
+        _graphColor = graphColor
         
     }
     
@@ -41,8 +46,10 @@ class _makePieGraphView: UIView {
     }
     
     // MARK: - Internal Func
-    func changeParams(params:[Dictionary<String,AnyObject>]){
-        _params = params;
+    func changeParams(molecule: Float, denominator: Float, graphColor: UIColor){
+        _molecule = molecule
+        _denominator = denominator
+        _graphColor = graphColor
     }
     
     func startAnimating(){
@@ -62,30 +69,24 @@ class _makePieGraphView: UIView {
         x += rect.size.width/2;
         var y:CGFloat = rect.origin.y;
         y += rect.size.height/2;
-        var max:CGFloat = 0;
-        for dic : Dictionary<String,AnyObject> in _params {
-            let value = CGFloat(dic["value"] as! Float)
-            max += value;
-        }
+        let max:CGFloat = CGFloat(_denominator);
         
         var start_angle:CGFloat = -CGFloat(M_PI / 2);
         var end_angle:CGFloat    = 0;
         let radius:CGFloat  = x - 10.0;
-        for dic : Dictionary<String,AnyObject> in _params {
-            let value = CGFloat(dic["value"] as! Float)
-            end_angle = start_angle + CGFloat(M_PI*2) * (value/max);
-            if(end_angle > _end_angle) {
-                end_angle = _end_angle;
-            }
-            let color:UIColor = dic["color"] as! UIColor
-            
-            CGContextMoveToPoint(context, x, y);
-            CGContextAddArc(context, x, y, radius/2,  end_angle, start_angle, 1);
-            CGContextSetFillColor(context, CGColorGetComponents(color.CGColor));
-            CGContextClosePath(context);
-            CGContextFillPath(context);
-            start_angle = end_angle;
+        let value = CGFloat(_molecule)
+        end_angle = start_angle + CGFloat(M_PI*2) * (value/max);
+        if(end_angle > _end_angle) {
+            end_angle = _end_angle;
         }
+        let color:UIColor = _graphColor
+            
+        CGContextMoveToPoint(context, x, y);
+        CGContextAddArc(context, x, y, radius/2,  end_angle, start_angle, 1);
+        CGContextSetFillColor(context, CGColorGetComponents(color.CGColor));
+        CGContextClosePath(context);
+        CGContextFillPath(context);
+        start_angle = end_angle;
     }
     
 }

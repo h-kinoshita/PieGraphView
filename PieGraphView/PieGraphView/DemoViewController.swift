@@ -14,14 +14,11 @@ class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // Do any additional setup after loading the view, typically from a nib.
-        var params = [Dictionary<String,AnyObject>]()
-        params.append(["value":7,"color":UIColor.redColor()])
-                params.append(["value":5,"color":UIColor.blueColor()])
-                params.append(["value":8,"color":UIColor.greenColor()])
-                params.append(["value":10,"color":UIColor.yellowColor()])
-        let backGroundColor = UIColor.darkGrayColor()
-        graphView = PieGraphView(frame: CGRectMake(0, 30, 320, 320), params: params, backGroundColor: backGroundColor)
+        let molecule: Float = 40.0;
+        let denominate: Float = 100.0;
+        let graphColor: UIColor = UIColor.blueColor()
+        let backGroundColor: UIColor = UIColor.darkGrayColor()
+        graphView = PieGraphView(frame: CGRectMake(0, 30, 320, 320), molecule: molecule, denominator:denominate ,graphColor: graphColor, backGroundColor: backGroundColor)
         self.view.addSubview(graphView)
     }
     

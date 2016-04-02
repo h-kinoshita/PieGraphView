@@ -12,7 +12,9 @@ class PieGraphView: UIView {
     
     // MARK: - Grobal vars
     /// Parameter
-    var _params:[Dictionary<String,AnyObject>]!
+    var _molecule: Float!
+    var _denominator: Float!
+    var _graphColor: UIColor!
     var _backGroundColor: UIColor!
     
     /// Classes
@@ -25,10 +27,12 @@ class PieGraphView: UIView {
     }
     
     // MARK: - Initialize
-    init(frame: CGRect, params:[Dictionary<String, AnyObject>], backGroundColor: UIColor) {
+    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor, backGroundColor: UIColor) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor();
-        _params = params;
+        _molecule = molecule
+        _denominator = denominator
+        _graphColor = graphColor
         _backGroundColor = backGroundColor
         self.setSubView()
         
@@ -38,7 +42,7 @@ class PieGraphView: UIView {
     func setSubView() {
         // addSubView customView of BackGround
         backGroundView = _backGroundView.init(frame: frame, backGroundColor: _backGroundColor)
-        makePieGraphView = _makePieGraphView.init(frame: frame, params: _params)
+        makePieGraphView = _makePieGraphView.init(frame: frame, molecule: _molecule, denominator: _denominator, graphColor: _graphColor)
         
         self.addSubview(backGroundView)
         self.addSubview(makePieGraphView)
@@ -46,7 +50,7 @@ class PieGraphView: UIView {
     
     // MARK: - Internal func
     func changeParams(params:[Dictionary<String,AnyObject>]){
-        self.makePieGraphView.changeParams(params)
+        self.makePieGraphView.changeParams(_molecule, denominator: _denominator, graphColor: _graphColor)
     }
     
     func startAnimating(){
