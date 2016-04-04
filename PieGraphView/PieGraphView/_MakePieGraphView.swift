@@ -35,7 +35,6 @@ class _MakePieGraphView: UIView {
     
     // MARK: - Private Func
     func update(link:AnyObject){
-        var flag = true
         let angle = CGFloat(M_PI*2.0 / 100.0)
         _end_angle = _end_angle +  angle
         if(_end_angle > CGFloat(M_PI*2)) {
@@ -43,7 +42,6 @@ class _MakePieGraphView: UIView {
             link.invalidate()
         } else {
             self.setNeedsDisplay()
-            if flag {
                 let transition = CATransition()
                 transition.duration = 1.0
                 transition.delegate = self
@@ -51,8 +49,6 @@ class _MakePieGraphView: UIView {
                 transition.fillMode = kCAFillModeForwards
                 transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
                 self.layer.addAnimation(transition, forKey: nil)
-                flag = false
-            }
         }
     }
     
@@ -65,7 +61,7 @@ class _MakePieGraphView: UIView {
     
     func startAnimating(){
         _end_angle = -CGFloat(M_PI / 2.0)
-        let displayLink = CADisplayLink(target: self, selector: #selector(_MakePieGraphView.update(_:)))
+        let displayLink = CADisplayLink(target: self, selector: #selector(self.update(_:)))
         displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
     }
     
@@ -89,7 +85,7 @@ class _MakePieGraphView: UIView {
         
         var start_angle:CGFloat = -CGFloat(M_PI / 2)
         var end_angle:CGFloat    = 0
-        let radius:CGFloat  = x - 10.0
+        let radius:CGFloat  = x
         let value = CGFloat(_molecule)
         end_angle = start_angle + CGFloat(M_PI*2) * (value/max)
         if(end_angle > _end_angle) {
@@ -102,7 +98,7 @@ class _MakePieGraphView: UIView {
         
         let bodyPath = UIBezierPath()
         bodyPath.moveToPoint(CGPoint(x: rect.size.width/2, y: rect.size.height/2))
-        bodyPath.addArcWithCenter(CGPoint(x:rect.size.width/2, y: rect.size.height/2), radius: radius/2, startAngle: start_angle, endAngle: end_angle, clockwise: true)
+        bodyPath.addArcWithCenter(CGPoint(x:rect.size.width/2, y: rect.size.height/2), radius: radius, startAngle: start_angle, endAngle: end_angle, clockwise: true)
         bodyPath.closePath()
         bodyLayer.path = bodyPath.CGPath
         layer.addSublayer(bodyLayer)

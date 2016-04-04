@@ -28,11 +28,11 @@ class _BackGroundView: UIView {
         x += frame.size.width/2;
         var y:CGFloat = frame.origin.y;
         y += frame.size.height/2;
-        let radius:CGFloat  = x - 10.0;
+        let radius:CGFloat  = x;
         
         let path: UIBezierPath = UIBezierPath();
         path.moveToPoint(CGPointMake(x, frame.size.height/2))
-        path.addArcWithCenter(CGPointMake(x, frame.size.height/2), radius: radius/2, startAngle: start, endAngle: end, clockwise: true) // 円弧
+        path.addArcWithCenter(CGPointMake(x, frame.size.height/2), radius: radius, startAngle: start, endAngle: end, clockwise: true) // 円弧
         
         let layer = CAShapeLayer()
         layer.fillColor = backGroundColor.CGColor
