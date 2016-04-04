@@ -33,8 +33,6 @@ class _MakePieGraphView: UIView {
         _frame = frame
         _end_angle = CGFloat(_molecule / _denominator) * CGFloat(M_PI)
         
-        print(M_PI)
-        
     }
     
     // MARK: - Private Func
@@ -69,7 +67,7 @@ class _MakePieGraphView: UIView {
         let path: UIBezierPath = UIBezierPath();
         let startAngle:CGFloat = -CGFloat(M_PI / 2)
         let endAngle:CGFloat    = _end_angle
-        print(_end_angle)
+
         path.addArcWithCenter(CGPointMake(x, y),
                               radius: x/2,
                               startAngle: startAngle,
@@ -88,7 +86,7 @@ class _MakePieGraphView: UIView {
         strokeEndAnimation.fillMode  = kCAFillModeForwards
         strokeEndAnimation.fromValue = 0.0
         strokeEndAnimation.toValue   = 1.0
-        strokeEndAnimation.duration  = 2.0
+        strokeEndAnimation.duration  = 0.6
         strokeEndAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
         ovalShapeLayer.addAnimation(strokeEndAnimation, forKey: nil)
     }

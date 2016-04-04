@@ -35,7 +35,7 @@ class _MakeMoleculeView: UIView {
     }
     
     func countForAnimationType(toValue: Float) {
-        countingLabel.countFrom(0, to: toValue, withDuration: NSTimeInterval(1), andAnimationType: .EaseOut, andCountingType: .Int)
+        countingLabel.countFrom(0, to: toValue, withDuration: NSTimeInterval(0.6), andAnimationType: .EaseOut, andCountingType: .Int)
     }
     
     func settingCountingLabel() {
