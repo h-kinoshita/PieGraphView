@@ -19,6 +19,7 @@
 		5358A6181CAFD0C900D96845 /* _BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6171CAFD0C900D96845 /* _BackGroundView.swift */; };
 		5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A61A1CAFD1B400D96845 /* PieGraphView.swift */; };
 		53A1EDE41CAFFC810094AE29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */; };
+		53C734C51CB29025007DC6DA /* _MakeMoleculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C734C41CB29025007DC6DA /* _MakeMoleculeView.swift */; };
 		53CBA1061CB247820094EC32 /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA1051CB247820094EC32 /* sampleViewController.swift */; };
 		53CBA10A1CB2764A0094EC32 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA1091CB2764A0094EC32 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		5358A6171CAFD0C900D96845 /* _BackGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _BackGroundView.swift; sourceTree = "<group>"; };
 		5358A61A1CAFD1B400D96845 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
 		53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		53C734C41CB29025007DC6DA /* _MakeMoleculeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _MakeMoleculeView.swift; sourceTree = "<group>"; };
 		53CBA1051CB247820094EC32 /* sampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
 		53CBA1091CB2764A0094EC32 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +160,7 @@
 			children = (
 				5358A6171CAFD0C900D96845 /* _BackGroundView.swift */,
 				5358A6141CAFBBA100D96845 /* _MakePieGraphView.swift */,
+				53C734C41CB29025007DC6DA /* _MakeMoleculeView.swift */,
 			);
 			name = PrivateClass;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				5358A5E61CAFBAF100D96845 /* DemoPieGrapgViewController.swift in Sources */,
 				5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */,
 				5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */,
+				53C734C51CB29025007DC6DA /* _MakeMoleculeView.swift in Sources */,
 				53CBA1061CB247820094EC32 /* sampleViewController.swift in Sources */,
 				5358A5EC1CAFBAF100D96845 /* PieGraphView.xcdatamodeld in Sources */,
 			);

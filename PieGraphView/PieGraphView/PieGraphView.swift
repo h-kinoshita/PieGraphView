@@ -20,6 +20,7 @@ class PieGraphView: UIView {
     /// Classes
     var makePieGraphView: _MakePieGraphView!
     var backGroundView: _BackGroundView!
+    var makeMoleculeView: _MakeMoleculeView!
     
     // MARK: - Required
     required init(coder aDecoder: NSCoder) {
@@ -43,18 +44,22 @@ class PieGraphView: UIView {
         // addSubView customView of BackGround
         backGroundView = _BackGroundView.init(frame: frame, backGroundColor: _backGroundColor)
         makePieGraphView = _MakePieGraphView.init(frame: frame, molecule: _molecule, denominator: _denominator, graphColor: _graphColor)
+        makeMoleculeView = _MakeMoleculeView.init(frame: frame, molecule: _molecule)
         
         self.addSubview(backGroundView)
         self.addSubview(makePieGraphView)
+        self.addSubview(makeMoleculeView)
     }
     
     // MARK: - Internal func
     func changeParams(molecule: Float, denominator: Float, graphColor: UIColor){
+        _molecule = molecule
         self.makePieGraphView.changeParams(molecule, denominator: denominator, graphColor: graphColor)
     }
     
     func startAnimating(){
         self.makePieGraphView.startAnimating()
+        makeMoleculeView.countForAnimationType(_molecule)
         
     }
 

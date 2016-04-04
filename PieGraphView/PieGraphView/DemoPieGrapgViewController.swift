@@ -18,7 +18,7 @@ class DemoPieGraphViewController: UIViewController {
         let denominator: Float = 100.0;
         let graphColor: UIColor = UIColor.yellowColor()
         let backGroundColor: UIColor = UIColor.darkGrayColor()
-        graphView = PieGraphView(frame: CGRectMake(30, 50, 30, 30), molecule: molecule, denominator:denominator ,graphColor: graphColor, backGroundColor: backGroundColor)
+        graphView = PieGraphView(frame: CGRectMake(30, 50, 60, 60), molecule: molecule, denominator:denominator ,graphColor: graphColor, backGroundColor: backGroundColor)
         self.view.addSubview(graphView)
     }
     

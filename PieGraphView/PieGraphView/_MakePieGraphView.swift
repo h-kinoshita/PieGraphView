@@ -105,5 +105,4 @@ class _MakePieGraphView: UIView {
         
         start_angle = end_angle
     }
-    
 }
