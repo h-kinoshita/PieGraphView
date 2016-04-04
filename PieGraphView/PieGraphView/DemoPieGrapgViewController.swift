@@ -1,5 +1,5 @@
 //
-//  DemoViewController.swift
+//  DemoPieGrapfViewController.swift
 //  PieGraphView
 //
 //  Created by h.kinoshita on 2016/04/02.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoViewController: UIViewController {
+class DemoPieGraphViewController: UIViewController {
 
     var graphView:PieGraphView!;
     override func viewDidLoad() {

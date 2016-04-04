@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A5E31CAFBAF100D96845 /* AppDelegate.swift */; };
-		5358A5E61CAFBAF100D96845 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A5E51CAFBAF100D96845 /* DemoViewController.swift */; };
+		5358A5E61CAFBAF100D96845 /* DemoPieGrapgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A5E51CAFBAF100D96845 /* DemoPieGrapgViewController.swift */; };
 		5358A5E91CAFBAF100D96845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5358A5E71CAFBAF100D96845 /* Main.storyboard */; };
 		5358A5EC1CAFBAF100D96845 /* PieGraphView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5358A5EA1CAFBAF100D96845 /* PieGraphView.xcdatamodeld */; };
 		5358A5EE1CAFBAF200D96845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5358A5ED1CAFBAF200D96845 /* Assets.xcassets */; };
@@ -41,7 +41,7 @@
 /* Begin PBXFileReference section */
 		5358A5E01CAFBAF100D96845 /* PieGraphView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PieGraphView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5358A5E31CAFBAF100D96845 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5358A5E51CAFBAF100D96845 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		5358A5E51CAFBAF100D96845 /* DemoPieGrapgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoPieGrapgViewController.swift; sourceTree = "<group>"; };
 		5358A5E81CAFBAF100D96845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5358A5EB1CAFBAF100D96845 /* PieGraphView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PieGraphView.xcdatamodel; sourceTree = "<group>"; };
 		5358A5ED1CAFBAF200D96845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5358A5E31CAFBAF100D96845 /* AppDelegate.swift */,
-				5358A5E51CAFBAF100D96845 /* DemoViewController.swift */,
+				5358A5E51CAFBAF100D96845 /* DemoPieGrapgViewController.swift */,
 				5358A6161CAFD08F00D96845 /* Class */,
 				5358A5E71CAFBAF100D96845 /* Main.storyboard */,
 				5358A5ED1CAFBAF200D96845 /* Assets.xcassets */,
@@ -290,7 +290,7 @@
 			files = (
 				5358A6151CAFBBA100D96845 /* _MakePieGraphView.swift in Sources */,
 				5358A6181CAFD0C900D96845 /* _BackGroundView.swift in Sources */,
-				5358A5E61CAFBAF100D96845 /* DemoViewController.swift in Sources */,
+				5358A5E61CAFBAF100D96845 /* DemoPieGrapgViewController.swift in Sources */,
 				5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */,
 				5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */,
 				5358A5EC1CAFBAF100D96845 /* PieGraphView.xcdatamodeld in Sources */,
