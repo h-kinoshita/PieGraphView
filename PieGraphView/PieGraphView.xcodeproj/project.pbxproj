@@ -111,7 +111,7 @@
 			children = (
 				5358A5E31CAFBAF100D96845 /* AppDelegate.swift */,
 				5358A5E51CAFBAF100D96845 /* DemoViewController.swift */,
-				5358A6161CAFD08F00D96845 /* class */,
+				5358A6161CAFD08F00D96845 /* Class */,
 				5358A5E71CAFBAF100D96845 /* Main.storyboard */,
 				5358A5ED1CAFBAF200D96845 /* Assets.xcassets */,
 				5358A5EF1CAFBAF200D96845 /* LaunchScreen.storyboard */,
@@ -139,13 +139,13 @@
 			path = PieGraphViewUITests;
 			sourceTree = "<group>";
 		};
-		5358A6161CAFD08F00D96845 /* class */ = {
+		5358A6161CAFD08F00D96845 /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				5358A6191CAFD19000D96845 /* PrivateClass */,
 				5358A61A1CAFD1B400D96845 /* PieGraphView.swift */,
 			);
-			name = class;
+			name = Class;
 			sourceTree = "<group>";
 		};
 		5358A6191CAFD19000D96845 /* PrivateClass */ = {
