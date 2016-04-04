@@ -16,6 +16,7 @@ class PieGraphView: UIView {
     var _denominator: Float!
     var _graphColor: UIColor!
     var _backGroundColor: UIColor!
+    var _moleculeDisplayFlag: Bool!
     
     /// Classes
     var makePieGraphView: _MakePieGraphView!
@@ -28,13 +29,14 @@ class PieGraphView: UIView {
     }
     
     // MARK: - Initialize
-    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor, backGroundColor: UIColor) {
+    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor, backGroundColor: UIColor, moleculeDisplayFlag: Bool) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor();
         _molecule = molecule
         _denominator = denominator
         _graphColor = graphColor
         _backGroundColor = backGroundColor
+        _moleculeDisplayFlag = moleculeDisplayFlag
         self.setSubView()
         
     }
@@ -48,7 +50,9 @@ class PieGraphView: UIView {
         
         self.addSubview(backGroundView)
         self.addSubview(makePieGraphView)
-        self.addSubview(makeMoleculeView)
+        if _moleculeDisplayFlag! {
+            self.addSubview(makeMoleculeView)
+        }
     }
     
     // MARK: - Internal func
@@ -59,7 +63,9 @@ class PieGraphView: UIView {
     
     func startAnimating(){
         self.makePieGraphView.startAnimating()
-        self.makeMoleculeView.countForAnimationType(_molecule)
+        if _moleculeDisplayFlag! {
+            self.makeMoleculeView.countForAnimationType(_molecule)
+        }
         
     }
 
