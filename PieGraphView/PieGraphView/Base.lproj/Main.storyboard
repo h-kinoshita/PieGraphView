@@ -76,10 +76,10 @@
             </objects>
             <point key="canvasLocation" x="1134.5" y="248.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Sample View Controller-->
         <scene sceneID="7Rc-jG-UhM">
             <objects>
-                <viewController id="iu6-r1-LFZ" sceneMemberID="viewController">
+                <viewController id="iu6-r1-LFZ" customClass="sampleViewController" customModule="PieGraphView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BCI-FU-5uv"/>
                         <viewControllerLayoutGuide type="bottom" id="qGp-xn-G0J"/>

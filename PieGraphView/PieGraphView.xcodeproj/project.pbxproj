@@ -19,6 +19,7 @@
 		5358A6181CAFD0C900D96845 /* _BackGroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A6171CAFD0C900D96845 /* _BackGroundView.swift */; };
 		5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A61A1CAFD1B400D96845 /* PieGraphView.swift */; };
 		53A1EDE41CAFFC810094AE29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */; };
+		53CBA1061CB247820094EC32 /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA1051CB247820094EC32 /* sampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		5358A6171CAFD0C900D96845 /* _BackGroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _BackGroundView.swift; sourceTree = "<group>"; };
 		5358A61A1CAFD1B400D96845 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
 		53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		53CBA1051CB247820094EC32 /* sampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			children = (
 				5358A5E31CAFBAF100D96845 /* AppDelegate.swift */,
 				5358A5E51CAFBAF100D96845 /* DemoPieGrapgViewController.swift */,
+				53CBA1051CB247820094EC32 /* sampleViewController.swift */,
 				5358A6161CAFD08F00D96845 /* Class */,
 				5358A5E71CAFBAF100D96845 /* Main.storyboard */,
 				5358A5ED1CAFBAF200D96845 /* Assets.xcassets */,
@@ -293,6 +296,7 @@
 				5358A5E61CAFBAF100D96845 /* DemoPieGrapgViewController.swift in Sources */,
 				5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */,
 				5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */,
+				53CBA1061CB247820094EC32 /* sampleViewController.swift in Sources */,
 				5358A5EC1CAFBAF100D96845 /* PieGraphView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
