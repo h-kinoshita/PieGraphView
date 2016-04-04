@@ -27,11 +27,13 @@ class _MakePieGraphView: UIView {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
         
-        _end_angle = -CGFloat(M_PI / 2.0)
         _molecule = molecule
         _denominator = denominator
         _graphColor = graphColor
         _frame = frame
+        _end_angle = CGFloat(_molecule / _denominator) * CGFloat(M_PI)
+        
+        print(M_PI)
         
     }
     
@@ -52,57 +54,42 @@ class _MakePieGraphView: UIView {
         _molecule = molecule
         _denominator = denominator
         _graphColor = graphColor
+        
+        _end_angle = CGFloat(_molecule / _denominator) * CGFloat(M_PI)
     }
     
     func startAnimating(){
-        _end_angle = -CGFloat(M_PI / 2.0)
-        let displayLink = CADisplayLink(target: self, selector: #selector(self.update(_:)))
-        displayLink.addToRunLoop(NSRunLoop.currentRunLoop(), forMode: NSRunLoopCommonModes)
-    }
-    
-    // MARK: - Overrides
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-        
-        let context:CGContextRef = UIGraphicsGetCurrentContext()!
-        self.drawingRextLayer(context)
-
-    }
-    
-    func drawingRextLayer(context: CGContext) {
         var x:CGFloat = _frame.origin.x
         x += _frame.size.width/2
         var y:CGFloat = _frame.origin.y
         y += _frame.size.height/2
-        let max:CGFloat = CGFloat(_denominator)
         
-        var start_angle:CGFloat = -CGFloat(M_PI / 2)
-        var end_angle:CGFloat    = 0
-        let radius:CGFloat  = x
-        let value = CGFloat(_molecule)
-        end_angle = start_angle + CGFloat(M_PI*2) * (value/max)
-        if(end_angle > _end_angle) {
-            end_angle = _end_angle
-        }
-        let color:UIColor = _graphColor
+        // 円のCALayer作成
+        let ovalShapeLayer = CAShapeLayer()
+        let path: UIBezierPath = UIBezierPath();
+        let startAngle:CGFloat = -CGFloat(M_PI / 2)
+        let endAngle:CGFloat    = _end_angle
+        print(_end_angle)
+        path.addArcWithCenter(CGPointMake(x, y),
+                              radius: x/2,
+                              startAngle: startAngle,
+                              endAngle: endAngle,
+                              clockwise: true)
+        ovalShapeLayer.strokeColor = _graphColor.CGColor  // 輪郭は青色
+        ovalShapeLayer.fillColor = UIColor.clearColor().CGColor
+        ovalShapeLayer.lineWidth = x  // 輪郭の線の太さは1.0pt
+        ovalShapeLayer.path = path.CGPath
         
-        let bodyLayer = CAShapeLayer()
-        bodyLayer.fillColor = color.CGColor
+        // 作成したCALayerを画面に追加
+        self.layer.addSublayer(ovalShapeLayer)
         
-        let bodyPath = UIBezierPath()
-        bodyPath.moveToPoint(CGPointMake(x, y))
-        bodyPath.addArcWithCenter(CGPointMake(x, y),
-                                  radius: radius,
-                                  startAngle: start_angle,
-                                  endAngle: end_angle,
-                                  clockwise: true
-        )
-        bodyPath.closePath()
-        bodyLayer.path = bodyPath.CGPath
-        layer.addSublayer(bodyLayer)
-        
-        start_angle = end_angle
+        let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        strokeEndAnimation.removedOnCompletion = false
+        strokeEndAnimation.fillMode  = kCAFillModeForwards
+        strokeEndAnimation.fromValue = 0.0
+        strokeEndAnimation.toValue   = 1.0
+        strokeEndAnimation.duration  = 2.0
+        strokeEndAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
+        ovalShapeLayer.addAnimation(strokeEndAnimation, forKey: nil)
     }
 }
