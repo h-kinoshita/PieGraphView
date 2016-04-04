@@ -44,13 +44,6 @@ class _MakePieGraphView: UIView {
             link.invalidate()
         } else {
             self.setNeedsDisplay()
-                let transition = CATransition()
-                transition.duration = 1.0
-                transition.delegate = self
-                transition.removedOnCompletion = false
-                transition.fillMode = kCAFillModeForwards
-                transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-                self.layer.addAnimation(transition, forKey: nil)
         }
     }
     
