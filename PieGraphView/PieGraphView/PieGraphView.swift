@@ -59,7 +59,7 @@ class PieGraphView: UIView {
     
     func startAnimating(){
         self.makePieGraphView.startAnimating()
-        makeMoleculeView.countForAnimationType(_molecule)
+        self.makeMoleculeView.countForAnimationType(_molecule)
         
     }
 
