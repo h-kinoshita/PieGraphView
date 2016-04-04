@@ -15,6 +15,7 @@ class _MakePieGraphView: UIView {
     var _molecule: Float!
     var _denominator: Float!
     var _graphColor: UIColor!
+    var _frame: CGRect!
     
     // MARK: - Required
     required init(coder aDecoder: NSCoder) {
@@ -30,6 +31,7 @@ class _MakePieGraphView: UIView {
         _molecule = molecule
         _denominator = denominator
         _graphColor = graphColor
+        _frame = frame
         
     }
     
@@ -72,15 +74,15 @@ class _MakePieGraphView: UIView {
         // Drawing code
         
         let context:CGContextRef = UIGraphicsGetCurrentContext()!
-        self.drawingRextLayer(rect, context: context)
+        self.drawingRextLayer(context)
 
     }
     
-    func drawingRextLayer(rect: CGRect, context: CGContext) {
-        var x:CGFloat = rect.origin.x
-        x += rect.size.width/2
-        var y:CGFloat = rect.origin.y
-        y += rect.size.height/2
+    func drawingRextLayer(context: CGContext) {
+        var x:CGFloat = _frame.origin.x
+        x += _frame.size.width/2
+        var y:CGFloat = _frame.origin.y
+        y += _frame.size.height/2
         let max:CGFloat = CGFloat(_denominator)
         
         var start_angle:CGFloat = -CGFloat(M_PI / 2)
@@ -97,8 +99,8 @@ class _MakePieGraphView: UIView {
         bodyLayer.fillColor = color.CGColor
         
         let bodyPath = UIBezierPath()
-        bodyPath.moveToPoint(CGPoint(x: rect.size.width/2, y: rect.size.height/2))
-        bodyPath.addArcWithCenter(CGPoint(x:rect.size.width/2, y: rect.size.height/2), radius: radius, startAngle: start_angle, endAngle: end_angle, clockwise: true)
+        bodyPath.moveToPoint(CGPointMake(x, y))
+        bodyPath.addArcWithCenter(CGPointMake(x, y), radius: radius, startAngle: start_angle, endAngle: end_angle, clockwise: true)
         bodyPath.closePath()
         bodyLayer.path = bodyPath.CGPath
         layer.addSublayer(bodyLayer)
