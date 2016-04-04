@@ -49,7 +49,6 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="change:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WWs-cE-EXp"/>
                                     <segue destination="iu6-r1-LFZ" kind="show" id="xIE-Pi-dzA"/>
                                 </connections>
                             </button>
@@ -87,6 +86,15 @@
                     <view key="view" contentMode="scaleToFill" id="2Rz-IU-fm0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMb-wr-dtm">
+                                <rect key="frame" x="164" y="382" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="update:" destination="iu6-r1-LFZ" eventType="touchUpInside" id="Xo0-zc-FBd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jQr-dH-X5O"/>

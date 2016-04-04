@@ -9,11 +9,20 @@
 import UIKit
 
 class sampleViewController: UIViewController {
-
+    
+    var valueLabel: CountingLabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        valueLabel = CountingLabel()
+        valueLabel.frame = CGRectMake(70, 70, 100, 100)
+        valueLabel.backgroundColor = UIColor.blueColor()
+        self.view.addSubview(valueLabel)
+        
+    }
+    
+    func countForAnimationType(type: CountingLabel.AnimationType) {
+        valueLabel.countFrom(0, to: 349, withDuration: NSTimeInterval(6), andAnimationType: type, andCountingType: .Int)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +30,9 @@ class sampleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func update(sender: AnyObject) {
+        countForAnimationType(.EaseOut)
     }
-    */
+    
 
 }
