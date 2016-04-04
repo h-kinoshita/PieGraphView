@@ -100,7 +100,12 @@ class _MakePieGraphView: UIView {
         
         let bodyPath = UIBezierPath()
         bodyPath.moveToPoint(CGPointMake(x, y))
-        bodyPath.addArcWithCenter(CGPointMake(x, y), radius: radius, startAngle: start_angle, endAngle: end_angle, clockwise: true)
+        bodyPath.addArcWithCenter(CGPointMake(x, y),
+                                  radius: radius,
+                                  startAngle: start_angle,
+                                  endAngle: end_angle,
+                                  clockwise: true
+        )
         bodyPath.closePath()
         bodyLayer.path = bodyPath.CGPath
         layer.addSublayer(bodyLayer)
