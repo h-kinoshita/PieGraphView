@@ -35,18 +35,6 @@ class _MakePieGraphView: UIView {
         
     }
     
-    // MARK: - Private Func
-    func update(link:AnyObject){
-        let angle = CGFloat(M_PI*2.0 / 100.0)
-        _end_angle = _end_angle +  angle
-        if(_end_angle > CGFloat(M_PI*2)) {
-            // end prosess
-            link.invalidate()
-        } else {
-            self.setNeedsDisplay()
-        }
-    }
-    
     // MARK: - Internal Func
     func changeParams(molecule: Float, denominator: Float, graphColor: UIColor){
         _molecule = molecule
@@ -73,9 +61,9 @@ class _MakePieGraphView: UIView {
                               startAngle: startAngle,
                               endAngle: endAngle,
                               clockwise: true)
-        ovalShapeLayer.strokeColor = _graphColor.CGColor  // 輪郭は青色
+        ovalShapeLayer.strokeColor = _graphColor.CGColor
         ovalShapeLayer.fillColor = UIColor.clearColor().CGColor
-        ovalShapeLayer.lineWidth = x  // 輪郭の線の太さは1.0pt
+        ovalShapeLayer.lineWidth = x
         ovalShapeLayer.path = path.CGPath
         
         // 作成したCALayerを画面に追加

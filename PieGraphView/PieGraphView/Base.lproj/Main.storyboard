@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="1134.5" y="248.5"/>
         </scene>
-        <!--Sample View Controller-->
+        <!--Demo Bar View Controller-->
         <scene sceneID="7Rc-jG-UhM">
             <objects>
-                <viewController id="iu6-r1-LFZ" customClass="sampleViewController" customModule="PieGraphView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iu6-r1-LFZ" customClass="DemoBarViewController" customModule="PieGraphView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BCI-FU-5uv"/>
                         <viewControllerLayoutGuide type="bottom" id="qGp-xn-G0J"/>
@@ -86,6 +86,12 @@
                     <view key="view" contentMode="scaleToFill" id="2Rz-IU-fm0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ym-pG-9cL">
+                                <rect key="frame" x="170" y="445" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jQr-dH-X5O"/>

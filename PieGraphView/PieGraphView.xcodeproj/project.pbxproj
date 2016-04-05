@@ -20,7 +20,8 @@
 		5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5358A61A1CAFD1B400D96845 /* PieGraphView.swift */; };
 		53A1EDE41CAFFC810094AE29 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */; };
 		53C734C51CB29025007DC6DA /* _MakeMoleculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C734C41CB29025007DC6DA /* _MakeMoleculeView.swift */; };
-		53CBA1061CB247820094EC32 /* sampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA1051CB247820094EC32 /* sampleViewController.swift */; };
+		53C734C81CB35F4F007DC6DA /* BarGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C734C71CB35F4F007DC6DA /* BarGraphView.swift */; };
+		53CBA1061CB247820094EC32 /* DemoBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA1051CB247820094EC32 /* DemoBarViewController.swift */; };
 		53CBA10A1CB2764A0094EC32 /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53CBA1091CB2764A0094EC32 /* CustomLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +62,8 @@
 		5358A61A1CAFD1B400D96845 /* PieGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieGraphView.swift; sourceTree = "<group>"; };
 		53A1EDE31CAFFC810094AE29 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		53C734C41CB29025007DC6DA /* _MakeMoleculeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = _MakeMoleculeView.swift; sourceTree = "<group>"; };
-		53CBA1051CB247820094EC32 /* sampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sampleViewController.swift; sourceTree = "<group>"; };
+		53C734C71CB35F4F007DC6DA /* BarGraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarGraphView.swift; sourceTree = "<group>"; };
+		53CBA1051CB247820094EC32 /* DemoBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoBarViewController.swift; sourceTree = "<group>"; };
 		53CBA1091CB2764A0094EC32 /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,7 +119,7 @@
 			children = (
 				5358A5E31CAFBAF100D96845 /* AppDelegate.swift */,
 				5358A5E51CAFBAF100D96845 /* DemoPieGrapgViewController.swift */,
-				53CBA1051CB247820094EC32 /* sampleViewController.swift */,
+				53CBA1051CB247820094EC32 /* DemoBarViewController.swift */,
 				5358A6161CAFD08F00D96845 /* Class */,
 				5358A5E71CAFBAF100D96845 /* Main.storyboard */,
 				5358A5ED1CAFBAF200D96845 /* Assets.xcassets */,
@@ -149,8 +151,9 @@
 		5358A6161CAFD08F00D96845 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				53C734C21CB28EFB007DC6DA /* CustomLabel */,
-				53C734C31CB28F07007DC6DA /* Customview */,
+				53C734C61CB35F25007DC6DA /* BarGraphViewClass */,
+				53C734C21CB28EFB007DC6DA /* CustomLabelClass */,
+				53C734C31CB28F07007DC6DA /* PieGrapfViewClass */,
 			);
 			name = Class;
 			sourceTree = "<group>";
@@ -165,21 +168,29 @@
 			name = PrivateClass;
 			sourceTree = "<group>";
 		};
-		53C734C21CB28EFB007DC6DA /* CustomLabel */ = {
+		53C734C21CB28EFB007DC6DA /* CustomLabelClass */ = {
 			isa = PBXGroup;
 			children = (
 				53CBA1091CB2764A0094EC32 /* CustomLabel.swift */,
 			);
-			name = CustomLabel;
+			name = CustomLabelClass;
 			sourceTree = "<group>";
 		};
-		53C734C31CB28F07007DC6DA /* Customview */ = {
+		53C734C31CB28F07007DC6DA /* PieGrapfViewClass */ = {
 			isa = PBXGroup;
 			children = (
 				5358A6191CAFD19000D96845 /* PrivateClass */,
 				5358A61A1CAFD1B400D96845 /* PieGraphView.swift */,
 			);
-			name = Customview;
+			name = PieGrapfViewClass;
+			sourceTree = "<group>";
+		};
+		53C734C61CB35F25007DC6DA /* BarGraphViewClass */ = {
+			isa = PBXGroup;
+			children = (
+				53C734C71CB35F4F007DC6DA /* BarGraphView.swift */,
+			);
+			name = BarGraphViewClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,13 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				53CBA10A1CB2764A0094EC32 /* CustomLabel.swift in Sources */,
+				53C734C81CB35F4F007DC6DA /* BarGraphView.swift in Sources */,
 				5358A6151CAFBBA100D96845 /* _MakePieGraphView.swift in Sources */,
 				5358A6181CAFD0C900D96845 /* _BackGroundView.swift in Sources */,
 				5358A5E61CAFBAF100D96845 /* DemoPieGrapgViewController.swift in Sources */,
 				5358A5E41CAFBAF100D96845 /* AppDelegate.swift in Sources */,
 				5358A61B1CAFD1B400D96845 /* PieGraphView.swift in Sources */,
 				53C734C51CB29025007DC6DA /* _MakeMoleculeView.swift in Sources */,
-				53CBA1061CB247820094EC32 /* sampleViewController.swift in Sources */,
+				53CBA1061CB247820094EC32 /* DemoBarViewController.swift in Sources */,
 				5358A5EC1CAFBAF100D96845 /* PieGraphView.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
