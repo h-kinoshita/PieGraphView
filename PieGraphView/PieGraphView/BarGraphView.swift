@@ -17,7 +17,8 @@ class BarGraphView: UIView {
     var _animateFrameY: CGFloat!
     var _ratio: CGFloat!
     var _graphHeight: CGFloat!
-    
+    var _graphColor: UIColor!
+    var _backGroundColor: UIColor!
     
     // MARK: - Classes
     var backGroundView: UIView!
@@ -38,13 +39,8 @@ class BarGraphView: UIView {
         _animateFrameY = (_frameY + _frameHeight) / 2
         _ratio = CGFloat(molecule / denominator)
         _graphHeight = _frameHeight * _ratio
-        
-        print(_frameY)
-        print(_frameWidth)
-        print(_frameHeight)
-        print(_animateFrameY)
-        print(_ratio)
-        print(_graphHeight)
+        _graphColor = graphColor
+        _backGroundColor = backGroundColor
         
         settingBackGroundView()
     }
@@ -52,7 +48,7 @@ class BarGraphView: UIView {
     func settingBackGroundView() {
         backGroundView = UIView()
         backGroundView.frame = CGRectMake(0, 0, _frameWidth, _frameHeight)
-        backGroundView.backgroundColor = UIColor.yellowColor()
+        backGroundView.backgroundColor = _backGroundColor
         backGroundView.layer.cornerRadius = backGroundView.frame.width / 2
         backGroundView.clipsToBounds = true
         self.addSubview(backGroundView)
@@ -60,7 +56,7 @@ class BarGraphView: UIView {
     
     func graphAnimationStart () {
         graphView = UIView()
-        graphView.backgroundColor = UIColor.darkGrayColor()
+        graphView.backgroundColor = _graphColor
         graphView.frame = CGRectMake(0, _animateFrameY, _frameWidth, 0)
         backGroundView.addSubview(graphView)
         

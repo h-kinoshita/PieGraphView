@@ -87,12 +87,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ym-pG-9cL">
-                                <rect key="frame" x="170" y="445" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Ym-pG-9cL">
+                                <rect key="frame" x="98" y="444" width="180" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="gyJ-vM-9YR"/>
+                                    <constraint firstAttribute="height" constant="30" id="ljo-El-9vK"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Animation"/>
+                                <connections>
+                                    <action selector="startAnimation:" destination="iu6-r1-LFZ" eventType="touchUpInside" id="H9W-Ae-4VU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6Ym-pG-9cL" firstAttribute="top" secondItem="BCI-FU-5uv" secondAttribute="bottom" constant="380" id="AUE-sP-Xu0"/>
+                            <constraint firstItem="6Ym-pG-9cL" firstAttribute="centerX" secondItem="2Rz-IU-fm0" secondAttribute="centerX" id="IWs-3w-W3R"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jQr-dH-X5O"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -17,8 +17,8 @@ class DemoBarViewController: UIViewController {
         barGraphView = BarGraphView.init(frame: CGRectMake(60, 100, 100, 100),
                                          molecule: 40,
                                          denominator: 80,
-                                         graphColor: UIColor.yellowColor(),
-                                         backGroundColor: UIColor.cyanColor())
+                                         graphColor: UIColor.init(red: 0, green: 178, blue: 178, alpha: 1.0),
+                                         backGroundColor: UIColor.init(red: 0, green: 128, blue: 128, alpha: 0.2))
         self.view.addSubview(barGraphView)
      
     }
@@ -26,5 +26,9 @@ class DemoBarViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func startAnimation(sender: AnyObject) {
+        
+        barGraphView.graphAnimationStart()
     }
 }
