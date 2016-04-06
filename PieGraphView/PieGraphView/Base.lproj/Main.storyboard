@@ -100,11 +100,24 @@
                                     <action selector="startAnimation:" destination="iu6-r1-LFZ" eventType="touchUpInside" id="H9W-Ae-4VU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayt-qW-fh1">
+                                <rect key="frame" x="98" y="508" width="180" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Next Sample"/>
+                                <connections>
+                                    <segue destination="5iL-p8-ybu" kind="show" id="4Kn-RK-g2Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6Ym-pG-9cL" firstAttribute="top" secondItem="BCI-FU-5uv" secondAttribute="bottom" constant="380" id="AUE-sP-Xu0"/>
+                            <constraint firstItem="Ayt-qW-fh1" firstAttribute="top" secondItem="6Ym-pG-9cL" secondAttribute="bottom" constant="34" id="H39-CQ-a8u"/>
                             <constraint firstItem="6Ym-pG-9cL" firstAttribute="centerX" secondItem="2Rz-IU-fm0" secondAttribute="centerX" id="IWs-3w-W3R"/>
+                            <constraint firstItem="Ayt-qW-fh1" firstAttribute="height" secondItem="6Ym-pG-9cL" secondAttribute="height" id="ZYZ-6X-jOe"/>
+                            <constraint firstItem="Ayt-qW-fh1" firstAttribute="centerX" secondItem="6Ym-pG-9cL" secondAttribute="centerX" id="n0I-KL-9Fy"/>
+                            <constraint firstItem="Ayt-qW-fh1" firstAttribute="width" secondItem="6Ym-pG-9cL" secondAttribute="width" id="wTU-tb-3Ha"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jQr-dH-X5O"/>
@@ -112,7 +125,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICY-t4-xmf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1639.5" y="248.5"/>
+            <point key="canvasLocation" x="1599.5" y="248.5"/>
+        </scene>
+        <!--Demo Horizontal Bar View Controller-->
+        <scene sceneID="cRh-jM-IEE">
+            <objects>
+                <viewController id="5iL-p8-ybu" customClass="DemoHorizontalBarViewController" customModule="PieGraphView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RgX-VK-Fgb"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hge-Sz-kbi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SrD-Tb-B6K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpB-eZ-ADJ">
+                                <rect key="frame" x="93" y="437" width="188" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0Zh-1U-wvz"/>
+                                    <constraint firstAttribute="width" constant="188" id="OT6-b8-cHF"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start Animation"/>
+                                <connections>
+                                    <action selector="startAnimation:" destination="iu6-r1-LFZ" eventType="touchUpInside" id="1eX-mf-QfD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BpB-eZ-ADJ" firstAttribute="centerX" secondItem="SrD-Tb-B6K" secondAttribute="centerX" id="4ab-W0-5Zr"/>
+                            <constraint firstItem="BpB-eZ-ADJ" firstAttribute="top" secondItem="RgX-VK-Fgb" secondAttribute="bottom" constant="373" id="gRR-8n-uBZ"/>
+                            <constraint firstItem="BpB-eZ-ADJ" firstAttribute="leading" secondItem="SrD-Tb-B6K" secondAttribute="leadingMargin" constant="77" id="lev-76-Roa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BpB-eZ-ADJ" secondAttribute="trailing" constant="78" id="yJB-0b-KLh"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vv3-oa-blf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2073.5" y="248.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JKe-mw-DZ5">
@@ -131,7 +184,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Owd-8W-fyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="322" y="248"/>
+            <point key="canvasLocation" x="649.5" y="248.5"/>
         </scene>
     </scenes>
 </document>
