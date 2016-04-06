@@ -9,11 +9,6 @@
 import UIKit
 
 class _MakeMoleculeView: UIView {
-
-    // MARK: - Global Var
-    var _molecule: Float!
-    var _frame: CGRect!
-    
     // MARK: - Classes
     var countingLabel: CountingLabel!
     
@@ -23,23 +18,21 @@ class _MakeMoleculeView: UIView {
     }
     
     // MARK: - Initialize
-    init(frame: CGRect, molecule: Float) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
         
-        _molecule = molecule
-        _frame = frame
         countingLabel = CountingLabel()
         
-        settingCountingLabel()
+        settingCountingLabel(frame)
     }
     
     func countForAnimationType(toValue: Float) {
         countingLabel.countFrom(0, to: toValue, withDuration: NSTimeInterval(0.6), andAnimationType: .EaseOut, andCountingType: .Int)
     }
     
-    func settingCountingLabel() {
-        countingLabel.frame = _frame
+    func settingCountingLabel(frame: CGRect) {
+        countingLabel.frame = frame
         countingLabel.text = String(0)
         countingLabel.font = UIFont.boldSystemFontOfSize(20)
         countingLabel.textAlignment = NSTextAlignment.Center

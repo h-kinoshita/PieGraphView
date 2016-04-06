@@ -46,7 +46,7 @@ class PieGraphView: UIView {
         // addSubView customView of BackGround
         backGroundView = _BackGroundView.init(frame: frame, backGroundColor: _backGroundColor)
         makePieGraphView = _MakePieGraphView.init(frame: frame, molecule: _molecule, denominator: _denominator, graphColor: _graphColor)
-        makeMoleculeView = _MakeMoleculeView.init(frame: frame, molecule: _molecule)
+        makeMoleculeView = _MakeMoleculeView.init(frame: frame)
         
         self.addSubview(backGroundView)
         self.addSubview(makePieGraphView)
