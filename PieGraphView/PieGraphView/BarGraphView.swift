@@ -20,6 +20,7 @@ class BarGraphView: UIView {
     var _graphColor: UIColor!
     var _backGroundColor: UIColor!
     var _molecule: Float!
+    var _moleculeDisplayFlag: Bool!
     
     // MARK: - Classes
     var backGroundView: UIView!
@@ -32,7 +33,7 @@ class BarGraphView: UIView {
     }
     
     // MARK: - Initialize
-    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor, backGroundColor: UIColor ) {
+    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor, backGroundColor: UIColor, moleculeDisplayFlag: Bool ) {
         super.init(frame: frame)
         
         _frameY = frame.minY
@@ -44,9 +45,13 @@ class BarGraphView: UIView {
         _graphColor = graphColor
         _backGroundColor = backGroundColor
         _molecule = molecule
+        _moleculeDisplayFlag = moleculeDisplayFlag
         
         settingBackGroundView()
-        settingCountingLabel()
+        
+        if _moleculeDisplayFlag! {
+            settingCountingLabel()
+        }
     }
     
     func settingBackGroundView() {
@@ -63,7 +68,10 @@ class BarGraphView: UIView {
         graphView.backgroundColor = _graphColor
         graphView.frame = CGRectMake(0, _animateFrameY, _frameWidth, 0)
         backGroundView.addSubview(graphView)
-        countForAnimationType(_molecule)
+        
+        if _moleculeDisplayFlag! {
+            countForAnimationType(_molecule)
+        }
         
         UIView.animateWithDuration(0.6, delay: 0, options: [UIViewAnimationOptions.CurveEaseInOut],                        animations: { () -> Void in
             self.graphView.frame = CGRectMake(0, self._animateFrameY - self._graphHeight, self._frameWidth, self._graphHeight)

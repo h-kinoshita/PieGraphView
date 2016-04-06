@@ -18,7 +18,9 @@ class DemoBarViewController: UIViewController {
                                          molecule: 40,
                                          denominator: 80,
                                          graphColor: UIColor.init(red: 0, green: 178, blue: 178, alpha: 1.0),
-                                         backGroundColor: UIColor.init(red: 0, green: 128, blue: 128, alpha: 0.2))
+                                         backGroundColor: UIColor.init(red: 0, green: 128, blue: 128, alpha: 0.2),
+                                         moleculeDisplayFlag: true
+        )
         self.view.addSubview(barGraphView)
      
     }
