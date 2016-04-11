@@ -38,4 +38,16 @@ class _MakeMoleculeView: UIView {
         countingLabel.textAlignment = NSTextAlignment.Center
         self.addSubview(countingLabel)
     }
+    
+    
+    func showStartValue() {
+        self.countingLabel.killTimer()
+        self.countingLabel.showStartValue()
+        
+    }
+    func showEndValue() {
+        self.countingLabel.killTimer()
+        self.countingLabel.showEndValue()
+        
+    }
 }

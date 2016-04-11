@@ -14,13 +14,19 @@ class DemoPieGraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let molecule: Float = 40.0;
-        let denominator: Float = 100.0;
-        let graphColor: UIColor = UIColor.init(red: 0, green: 178, blue: 178, alpha: 1.0)
-        let backGroundColor: UIColor = UIColor.init(red: 0, green: 128, blue: 128, alpha: 0.2)
-        let moleculeDisplayFlag = false
-        graphView = PieGraphView(frame: CGRectMake(30, 50, 60, 60), molecule: molecule, denominator:denominator ,graphColor: graphColor, backGroundColor: backGroundColor, moleculeDisplayFlag: moleculeDisplayFlag)
+        graphView = PieGraphView(frame: CGRectMake(100, 100, 100, 100))
+        graphView._molecule = 0;
+        graphView._denominator = 0;
+        graphView._graphColor = UIColor.init(red: 0, green: 178, blue: 178, alpha: 1.0)
+        graphView._backGroundColor = UIColor.init(red: 0, green: 128, blue: 128, alpha: 0.2)
+        graphView._moleculeDisplayFlag = false
+        graphView.displayAnimated = true
+        graphView.backgroundColor = UIColor.grayColor()
         self.view.addSubview(graphView)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,15 +35,13 @@ class DemoPieGraphViewController: UIViewController {
     }
     
     @IBAction func start(sender: AnyObject) {
-        graphView.startAnimating()
+        graphView._molecule = 30
+        graphView._denominator = 30
+        graphView.draw()
     }
     
     @IBAction func change(sender: AnyObject) {
-        let moleculeCange: Float = 85.0;
-        let denominatorChange: Float = 100.0;
-        let graphColorChange: UIColor = UIColor.yellowColor()
-        graphView.changeParams(moleculeCange, denominator: denominatorChange, graphColor: graphColorChange)
-        graphView.startAnimating()
+        graphView.clear()
     }
     
 }

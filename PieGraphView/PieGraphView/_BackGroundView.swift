@@ -9,17 +9,29 @@
 import UIKit
 
 class _BackGroundView: UIView {
-    
-    // MARK: - Required
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)!
-    }
+    var color: UIColor = UIColor.blueColor()
     
     // MARK: - Initialize
-    init(frame: CGRect, backGroundColor: UIColor ) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor();
-        
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        self.backgroundColor = UIColor.clearColor();
+    }
+    
+    func clear() {
+        if let sublayers = self.layer.sublayers {
+            for sublayer in sublayers {
+                sublayer.removeFromSuperlayer()
+            }
+        }
+    }
+    
+    func draw() {
+        self.clear()
         let pi = CGFloat(M_PI)
         let start:CGFloat = 0.0 // 開始の角度
         let end :CGFloat = pi * 2.0 // 終了の角度
@@ -35,7 +47,7 @@ class _BackGroundView: UIView {
         path.addArcWithCenter(CGPointMake(x, y), radius: radius, startAngle: start, endAngle: end, clockwise: true) // 円弧
         
         let layer = CAShapeLayer()
-        layer.fillColor = backGroundColor.CGColor
+        layer.fillColor = self.color.CGColor
         layer.path = path.CGPath
         self.layer.addSublayer(layer)
     }

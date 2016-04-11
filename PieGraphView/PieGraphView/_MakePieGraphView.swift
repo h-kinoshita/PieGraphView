@@ -11,28 +11,33 @@ import UIKit
 class _MakePieGraphView: UIView {
     
     // MARK: - Grobal vars
-    var _end_angle: CGFloat!
-    var _molecule: Float!
-    var _denominator: Float!
-    var _graphColor: UIColor!
-    var _frame: CGRect!
+    var _molecule: Float = 0.0 {
+        didSet {
+            self.updateEndAngle()
+        }
+    }
+    var _denominator: Float = 0.0 {
+        didSet {
+            self.updateEndAngle()
+        }
+    }
+    var _graphColor: UIColor = UIColor.redColor()
+    
+    // MARK: - private vars
+    private var _end_angle: CGFloat = 0.0
+    
+    var displayAnimated: Bool = false
     
     // MARK: - Required
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
+        self.backgroundColor = UIColor.clearColor()
     }
     
     // MARK: - Initialize
-    init(frame: CGRect, molecule: Float, denominator: Float, graphColor: UIColor) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
-        
-        _molecule = molecule
-        _denominator = denominator
-        _graphColor = graphColor
-        _frame = frame
-        _end_angle = CGFloat(_molecule / _denominator) * CGFloat(M_PI)
-        
     }
     
     // MARK: - Internal Func
@@ -43,12 +48,24 @@ class _MakePieGraphView: UIView {
         
         _end_angle = CGFloat(_molecule / _denominator) * CGFloat(M_PI)
     }
+    private func updateEndAngle() {
+        _end_angle = CGFloat(_molecule / _denominator) * CGFloat(M_PI)
+    }
+    func clear() {
+        if let sublayers = self.layer.sublayers {
+            for sublayer in sublayers {
+                sublayer.removeFromSuperlayer()
+            }
+        }
+    }
     
-    func startAnimating(){
-        var x:CGFloat = _frame.origin.x
-        x += _frame.size.width/2
-        var y:CGFloat = _frame.origin.y
-        y += _frame.size.height/2
+    func draw(){
+        self.clear()
+    
+        var x:CGFloat = self.frame.origin.x
+        x += self.frame.size.width/2
+        var y:CGFloat = self.frame.origin.y
+        y += self.frame.size.height/2
         
         // 円のCALayer作成
         let ovalShapeLayer = CAShapeLayer()
@@ -69,6 +86,9 @@ class _MakePieGraphView: UIView {
         // 作成したCALayerを画面に追加
         self.layer.addSublayer(ovalShapeLayer)
         
+        if !self.displayAnimated {
+            return
+        }
         let strokeEndAnimation = CABasicAnimation(keyPath: "strokeEnd")
         strokeEndAnimation.removedOnCompletion = false
         strokeEndAnimation.fillMode  = kCAFillModeForwards

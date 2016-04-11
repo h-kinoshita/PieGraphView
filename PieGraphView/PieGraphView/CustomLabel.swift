@@ -28,11 +28,11 @@ class CountingLabel: UILabel {
     var start: Float = 0.0
     var end: Float = 0.0
     var timer: NSTimer?
-    var progress: NSTimeInterval!
-    var lastUpdate: NSTimeInterval!
-    var duration: NSTimeInterval!
-    var countingType: CountingType!
-    var animationType: AnimationType!
+    var progress: NSTimeInterval = 0
+    var lastUpdate: NSTimeInterval = 0
+    var duration: NSTimeInterval = 0
+    var countingType: CountingType = .Float
+    var animationType: AnimationType = .EaseInOut
     var format: String?
     
     var currentValue: Float {
@@ -69,7 +69,7 @@ class CountingLabel: UILabel {
     }
     
     func updateText(value: Float) {
-        switch countingType! {
+        switch countingType {
         case .Int:
             self.text = "\(Int(value))"
         case .Float:
@@ -81,6 +81,12 @@ class CountingLabel: UILabel {
                 self.text = String(format: "%.2f", value)
             }
         }
+    }
+    func showStartValue() {
+        self.updateText(self.start)
+    }
+    func showEndValue() {
+        self.updateText(self.end)
     }
     
     func updateValue() {
@@ -105,7 +111,7 @@ class CountingLabel: UILabel {
     }
     
     func updateCounter(t: Float) -> Float {
-        switch animationType! {
+        switch animationType {
         case .Linear:
             return t
         case .EaseIn:
